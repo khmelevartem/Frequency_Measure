@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.FrequencyMeasure" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryVariant">@color/green_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue</item>
+        <item name="colorSecondaryVariant">@color/blue_dark</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnSecondary</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Butt.First" parent="Widget.MaterialComponents.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:backgroundTint">?attr/colorPrimary</item>
+    </style>
+
+    <style name="Butt.Second" parent="Widget.MaterialComponents.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:backgroundTint">?attr/colorSecondary</item>
+    </style>
+
+    <style name="ThemeOverlay.FrequencyMeasure.AppWidgetContainer" parent="">
+        <item name="appWidgetBackgroundColor">?attr/colorPrimary</item>
+        <item name="appWidgetTextColor">?attr/colorOnPrimary</item>
+    </style>
+</resources>

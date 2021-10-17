@@ -1,0 +1,17 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/ThemeOverlay.FrequencyMeasure.AppWidgetContainer"
+    >
+
+    <Button
+        android:id="@+id/btn_appwidget"
+        android:layout_width="@dimen/min_widget_button_size"
+        android:layout_height="@dimen/min_widget_button_size"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:background="@drawable/app_widget_background"
+        android:text="@string/start"
+        />
+
+</FrameLayout>

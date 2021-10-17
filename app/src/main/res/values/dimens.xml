@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_big">24dp</dimen>
+    <dimen name="button_height_large">88dp</dimen>
+
+    <dimen name="min_widget_size">40dp</dimen>
+    <dimen name="min_widget_button_size">70dp</dimen>
+    <dimen name="widget_margin">0dp</dimen>
+    <dimen name="stroke_width">2dp</dimen>
+</resources>
