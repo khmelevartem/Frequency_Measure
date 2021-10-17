@@ -6,6 +6,9 @@ import com.google.gson.Gson
 import java.util.*
 
 class SharedPrefsStateCache(context: Context) : StateCache {
+    private val sharedPreferences: SharedPreferences =
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+    private val editor = sharedPreferences.edit()
 
     override fun getStart(): Date? {
         val json = sharedPreferences.getString(START, DEFAULT)
@@ -21,15 +24,11 @@ class SharedPrefsStateCache(context: Context) : StateCache {
         editor.putString(START, null).apply()
     }
 
-    private val sharedPreferences: SharedPreferences =
-        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
-    private val editor = sharedPreferences.edit()
-    private val converter = Gson()
-
     companion object {
         const val PREFS = "state prefs"
         const val DEFAULT = "shared prefs default"
         const val START = "state start"
+        private val converter = Gson()
     }
 
 }

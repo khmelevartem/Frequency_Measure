@@ -6,7 +6,7 @@ import java.util.*
 
 class StateInteractorImpl(
     private val cache: StateCache,
-    private val seanceSaver: SeanceSaverIntearactor
+    private val seanceInteractor: SeanceIntearactor
 ) : StateInteractor {
 
     private val start: Date? get() = cache.getStart()
@@ -18,7 +18,7 @@ class StateInteractorImpl(
     override fun deactivate() {
         start?.let{ start ->
             val finish = currentTime()
-            seanceSaver.save(Seance(start, finish))
+            seanceInteractor.save(Seance(start, finish))
         }
         cache.eraseStart()
     }

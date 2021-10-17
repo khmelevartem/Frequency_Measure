@@ -1,10 +1,13 @@
 package com.tubetoast.frequencymeasure.di
 
 import android.content.Context
+import androidx.room.Room
 import com.tubetoast.frequencymeasure.data.cache.SharedPrefsStateCache
 import com.tubetoast.frequencymeasure.data.cache.StateCache
-import com.tubetoast.frequencymeasure.domain.SeanceSaverIntearactor
-import com.tubetoast.frequencymeasure.domain.SeanceSaverIntearactorImpl
+import com.tubetoast.frequencymeasure.data.db.room.RoomDB
+import com.tubetoast.frequencymeasure.data.db.room.dao.SeanceDao
+import com.tubetoast.frequencymeasure.domain.SeanceIntearactor
+import com.tubetoast.frequencymeasure.domain.SeanceIntearactorImpl
 import com.tubetoast.frequencymeasure.domain.StateInteractor
 import com.tubetoast.frequencymeasure.domain.StateInteractorImpl
 import com.tubetoast.frequencymeasure.presentation.App
@@ -13,9 +16,11 @@ import com.tubetoast.frequencymeasure.presentation.viewmodel.MainViewModelFactor
 import dagger.Component
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
+@Singleton
 @Component(
-    modules = [InteractorsModule::class, AppModule::class]
+    modules = [InteractorsModule::class, AppModule::class, DatabaseModule::class]
 )
 interface AppComponent {
     fun inject(mainActivity: MainActivity)
@@ -23,22 +28,46 @@ interface AppComponent {
 
 @Module
 class InteractorsModule {
+    @Singleton
     @Provides
     fun mainViewModelFactory(interactor: StateInteractor): MainViewModelFactory =
         MainViewModelFactory(interactor)
 
+    @Singleton
     @Provides
-    fun seanceSaverInteractor(): SeanceSaverIntearactor =
-        SeanceSaverIntearactorImpl()
+    fun seanceInteractor(db: RoomDB): SeanceIntearactor =
+        SeanceIntearactorImpl(db)
 
+    @Singleton
     @Provides
-    fun stateInteractor(cache: StateCache, saver: SeanceSaverIntearactor): StateInteractor =
+    fun stateInteractor(cache: StateCache, saver: SeanceIntearactor): StateInteractor =
         StateInteractorImpl(cache, saver)
 
+}
+
+@Module
+class DatabaseModule{
+
+    @Singleton
     @Provides
     fun stateCache(context: Context): StateCache =
         SharedPrefsStateCache(context)
 
+    @Singleton
+    @Provides
+    fun db(context: Context): RoomDB {
+        return Room.databaseBuilder(context, RoomDB::class.java, DB_NAME)
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
+    @Singleton
+    @Provides
+    fun seanceDao(db: RoomDB) : SeanceDao = db.seanceDao
+
+    companion object {
+        private const val DB_NAME = "freqmeasdb.db"
+    }
 }
 
 @Module

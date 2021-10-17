@@ -2,6 +2,6 @@ package com.tubetoast.frequencymeasure.domain
 
 import com.tubetoast.frequencymeasure.models.Seance
 
-interface SeanceSaverIntearactor {
+interface SeanceIntearactor {
     fun save(seance: Seance)
 }
