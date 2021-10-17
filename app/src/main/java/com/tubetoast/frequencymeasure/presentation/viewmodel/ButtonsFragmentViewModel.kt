@@ -7,7 +7,7 @@ import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.tubetoast.frequencymeasure.domain.StateInteractor
 
-class MainViewModel(
+class ButtonsFragmentViewModel(
     private val stateInteractor: StateInteractor,
 ) : ViewModel() {
 

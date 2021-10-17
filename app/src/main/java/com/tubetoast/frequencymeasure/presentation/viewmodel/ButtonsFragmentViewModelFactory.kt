@@ -4,10 +4,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.tubetoast.frequencymeasure.domain.StateInteractor
 
-class MainViewModelFactory(
+class ButtonsFragmentViewModelFactory(
     val stateInteractor: StateInteractor,
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return MainViewModel(stateInteractor) as T
+        return ButtonsFragmentViewModel(stateInteractor) as T
     }
 }

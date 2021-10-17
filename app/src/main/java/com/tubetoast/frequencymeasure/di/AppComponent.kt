@@ -11,8 +11,8 @@ import com.tubetoast.frequencymeasure.domain.SeanceIntearactorImpl
 import com.tubetoast.frequencymeasure.domain.StateInteractor
 import com.tubetoast.frequencymeasure.domain.StateInteractorImpl
 import com.tubetoast.frequencymeasure.presentation.App
-import com.tubetoast.frequencymeasure.presentation.view.MainActivity
-import com.tubetoast.frequencymeasure.presentation.viewmodel.MainViewModelFactory
+import com.tubetoast.frequencymeasure.presentation.view.ButtonsFragment
+import com.tubetoast.frequencymeasure.presentation.viewmodel.ButtonsFragmentViewModelFactory
 import dagger.Component
 import dagger.Module
 import dagger.Provides
@@ -23,15 +23,15 @@ import javax.inject.Singleton
     modules = [InteractorsModule::class, AppModule::class, DatabaseModule::class]
 )
 interface AppComponent {
-    fun inject(mainActivity: MainActivity)
+    fun inject(buttonsFragment: ButtonsFragment)
 }
 
 @Module
 class InteractorsModule {
     @Singleton
     @Provides
-    fun mainViewModelFactory(interactor: StateInteractor): MainViewModelFactory =
-        MainViewModelFactory(interactor)
+    fun mainViewModelFactory(interactor: StateInteractor): ButtonsFragmentViewModelFactory =
+        ButtonsFragmentViewModelFactory(interactor)
 
     @Singleton
     @Provides

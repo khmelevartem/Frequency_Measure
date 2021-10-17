@@ -1,36 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-    <data>
-        <variable
-            name="viewModel"
-            type="com.tubetoast.frequencymeasure.presentation.viewmodel.MainViewModel" />
-    </data>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.view.MainActivity">
+        android:name="com.tubetoast.frequencymeasure.presentation.view.ButtonsFragment"
+        android:id="@+id/buttons_fragment"
+        />
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/start"
-            style="@style/Butt.First"
-            android:visibility="@{viewModel.startVisibility}"
-            android:onClick="@{() -> viewModel.start()}"
-            />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_finish"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            style="@style/Butt.Second"
-            android:text="@string/finish"
-            android:onClick="@{() -> viewModel.finish()}"
-            android:visibility="@{viewModel.finishVisibility}"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+</FrameLayout>
