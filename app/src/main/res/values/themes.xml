@@ -14,15 +14,21 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Butt.First" parent="Widget.MaterialComponents.Button">
+    <style name="Butt" parent="Widget.MaterialComponents.TextView">
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textSize">@dimen/text_big</item>
+    </style>
+
+    <style name="Butt.First">
         <item name="android:backgroundTint">?attr/colorPrimary</item>
     </style>
 
-    <style name="Butt.Second" parent="Widget.MaterialComponents.Button">
-        <item name="android:insetTop">0dp</item>
-        <item name="android:insetBottom">0dp</item>
+    <style name="Butt.Second">
         <item name="android:backgroundTint">?attr/colorSecondary</item>
     </style>
 
@@ -30,4 +36,6 @@
         <item name="appWidgetBackgroundColor">?attr/colorPrimary</item>
         <item name="appWidgetTextColor">?attr/colorOnPrimary</item>
     </style>
+
+    <dimen name="text_big">24sp</dimen>
 </resources>

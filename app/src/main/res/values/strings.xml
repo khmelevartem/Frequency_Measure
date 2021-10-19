@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Frequency Measure</string>
-    <string name="start">Start</string>
-    <string name="finish">Finish</string>
+    <string name="start">S t a r t</string>
+    <string name="finish">F i n i s h</string>
     <string name="configure">Configure</string>
     <string name="add_widget">Add widget</string>
 </resources>
