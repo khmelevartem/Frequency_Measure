@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         tools:context=".presentation.view.ButtonFragment">
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="@{viewModel.startVisibility}"
@@ -28,14 +28,15 @@
                 android:gravity="center"
                 android:text="@string/start" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="@{viewModel.finishVisibility}"
             android:onClick="@{() -> viewModel.finish()}"
-            android:theme="@style/Butt.Second">
+            android:theme="@style/Butt.Second"
+            >
 
             <TextView
                 android:layout_width="match_parent"
@@ -43,18 +44,21 @@
                 android:gravity="center"
                 android:text="@string/finish" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <ImageButton
-            android:id="@+id/btn_more"
+            android:id="@+id/btn_settings"
             android:layout_width="@dimen/button_height_large"
             android:layout_height="@dimen/button_height_large"
             android:backgroundTint="@color/transparent"
             android:elevation="@dimen/extra_small"
+            android:outlineAmbientShadowColor="@color/transparent"
+            android:outlineSpotShadowColor="@color/transparent"
             android:scaleType="fitXY"
             android:src="@drawable/ic_baseline_more_horiz_24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_stats"

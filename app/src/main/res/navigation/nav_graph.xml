@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.tubetoast.frequencymeasure.presentation.view.MainFragment"
+        android:label="ButtonsFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/main_to_settings"
+            app:destination="@id/settingsFragment"
+            app:popUpTo="@id/mainFragment" />
+        <action
+            android:id="@+id/main_to_stats"
+            app:destination="@id/statsFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.tubetoast.frequencymeasure.presentation.view.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.tubetoast.frequencymeasure.presentation.view.StatsFragment"
+        android:label="fragment_stats"
+        tools:layout="@layout/fragment_stats" >
+        <action
+            android:id="@+id/stats_to_settings"
+            app:destination="@id/settingsFragment"
+            app:popUpTo="@id/statsFragment" />
+    </fragment>
+
+
+</navigation>
