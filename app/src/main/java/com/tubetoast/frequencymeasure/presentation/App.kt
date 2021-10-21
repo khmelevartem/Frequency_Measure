@@ -2,9 +2,8 @@ package com.tubetoast.frequencymeasure.presentation
 
 import android.app.Application
 import com.tubetoast.frequencymeasure.di.AppComponent
-import com.tubetoast.frequencymeasure.di.AppModule
-import com.tubetoast.frequencymeasure.di.InteractorsModule
 import com.tubetoast.frequencymeasure.di.DaggerAppComponent
+import com.tubetoast.frequencymeasure.di.modules.AppModule
 
 class App : Application() {
     lateinit var appComponent : AppComponent
