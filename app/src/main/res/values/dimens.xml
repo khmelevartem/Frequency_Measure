@@ -10,4 +10,5 @@
     <dimen name="widget_margin">0dp</dimen>
     <dimen name="stroke_width">2dp</dimen>
     <dimen name="extra_small">2dp</dimen>
+    <dimen name="text_big">24sp</dimen>
 </resources>

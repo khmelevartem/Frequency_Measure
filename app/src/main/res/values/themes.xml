@@ -14,9 +14,12 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Butt" parent="Widget.MaterialComponents.TextView">
+    <style name="BigText" parent="Widget.MaterialComponents.TextView">
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:letterSpacing">1.4</item>
+        <item name="android:gravity">center</item>
         <item name="textAllCaps">true</item>
         <item name="android:typeface">monospace</item>
         <item name="android:textStyle">bold</item>
@@ -24,11 +27,11 @@
         <item name="android:textSize">@dimen/text_big</item>
     </style>
 
-    <style name="Butt.First">
+    <style name="BigText.First">
         <item name="android:backgroundTint">?attr/colorPrimary</item>
     </style>
 
-    <style name="Butt.Second">
+    <style name="BigText.Second">
         <item name="android:backgroundTint">?attr/colorSecondary</item>
     </style>
 
@@ -37,5 +40,9 @@
         <item name="appWidgetTextColor">?attr/colorOnPrimary</item>
     </style>
 
-    <dimen name="text_big">24sp</dimen>
+    <style name="BigText.Back">
+        <item name="android:letterSpacing">0.2</item>
+        <item name="android:textColor">@color/almost_invisible_gray</item>
+    </style>
+
 </resources>

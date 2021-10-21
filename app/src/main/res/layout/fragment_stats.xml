@@ -1,18 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.view.StatsFragment">
+    <data>
 
-    <TextView
+        <variable
+            name="viewModel"
+            type="com.tubetoast.frequencymeasure.presentation.viewmodel.StatsFragmentViewModel" />
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="S T A T S" />
+        tools:context=".presentation.view.StatsFragment">
 
-</RelativeLayout>
+        <TextView
+            style="@style/BigText.Back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/statistics" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.2" />
+
+            <TextView
+                android:id="@+id/summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_middle"
+                android:textSize="@dimen/text_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:text="21 days, 4 hours" />
+
+            <ImageButton
+                android:id="@+id/btn_settings"
+                android:layout_width="@dimen/button_height_large"
+                android:layout_height="@dimen/button_height_large"
+                android:backgroundTint="@color/transparent"
+                android:elevation="@dimen/extra_small"
+                android:outlineAmbientShadowColor="@color/transparent"
+                android:outlineSpotShadowColor="@color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_more_horiz_24_black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="p" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
 
 </layout>

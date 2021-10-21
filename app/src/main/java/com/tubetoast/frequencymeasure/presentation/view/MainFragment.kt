@@ -4,31 +4,30 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.tubetoast.frequencymeasure.R
 import com.tubetoast.frequencymeasure.databinding.FragmentMainBinding
 import com.tubetoast.frequencymeasure.di.appComponent
+import com.tubetoast.frequencymeasure.presentation.utils.fragment
 import com.tubetoast.frequencymeasure.presentation.utils.navigateOnClick
-import com.tubetoast.frequencymeasure.presentation.viewmodel.ButtonsFragmentViewModel
-import com.tubetoast.frequencymeasure.presentation.viewmodel.ButtonsFragmentViewModelFactory
+import com.tubetoast.frequencymeasure.presentation.viewmodel.MainFragmentViewModel
+import com.tubetoast.frequencymeasure.presentation.viewmodel.factories.MainFragmentViewModelFactory
 import javax.inject.Inject
 
-class MainFragment : Fragment() {
+class MainFragment : BindingFragment<FragmentMainBinding>() {
 
-    private val fragment get() = this
     @Inject
-    lateinit var factory: ButtonsFragmentViewModelFactory
-    private val viewModel: ButtonsFragmentViewModel by viewModels { factory }
+    lateinit var factory: MainFragmentViewModelFactory
+    private val viewModel: MainFragmentViewModel by viewModels { factory }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        requireActivity().appComponent.inject(this)
-        return  FragmentMainBinding.inflate(layoutInflater, container, false)
+        requireContext().appComponent.inject(this)
+        return FragmentMainBinding.inflate(layoutInflater, container, false)
+            .save()
             .apply {
                 lifecycleOwner = fragment
                 viewModel = fragment.viewModel

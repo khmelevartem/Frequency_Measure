@@ -2,17 +2,17 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <RelativeLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.view.StatsFragment">
 
         <TextView
+            style="@style/BigText.Back"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="S E T T I N G S" />
+            android:text="@string/preferences" />
 
-    </RelativeLayout>
+    </FrameLayout>
 
 </layout>

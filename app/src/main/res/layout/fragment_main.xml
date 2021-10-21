@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.tubetoast.frequencymeasure.presentation.viewmodel.ButtonsFragmentViewModel" />
+            type="com.tubetoast.frequencymeasure.presentation.viewmodel.MainFragmentViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:visibility="@{viewModel.startVisibility}"
             android:onClick="@{() -> viewModel.start()}"
-            android:theme="@style/Butt.First">
+            android:theme="@style/BigText.First">
 
             <TextView
                 android:layout_width="match_parent"
@@ -35,7 +35,7 @@
             android:layout_height="match_parent"
             android:visibility="@{viewModel.finishVisibility}"
             android:onClick="@{() -> viewModel.finish()}"
-            android:theme="@style/Butt.Second"
+            android:theme="@style/BigText.Second"
             >
 
             <TextView

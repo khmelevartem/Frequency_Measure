@@ -12,7 +12,10 @@ import com.tubetoast.frequencymeasure.domain.StateInteractor
 import com.tubetoast.frequencymeasure.domain.StateInteractorImpl
 import com.tubetoast.frequencymeasure.presentation.App
 import com.tubetoast.frequencymeasure.presentation.view.MainFragment
-import com.tubetoast.frequencymeasure.presentation.viewmodel.ButtonsFragmentViewModelFactory
+import com.tubetoast.frequencymeasure.presentation.view.SettingsFragment
+import com.tubetoast.frequencymeasure.presentation.view.StatsFragment
+import com.tubetoast.frequencymeasure.presentation.viewmodel.factories.MainFragmentViewModelFactory
+import com.tubetoast.frequencymeasure.presentation.viewmodel.factories.StatsFragmentViewModelFactory
 import dagger.Component
 import dagger.Module
 import dagger.Provides
@@ -20,18 +23,34 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-    modules = [InteractorsModule::class, AppModule::class, DatabaseModule::class]
+    modules = [
+        VMFactoriesModule::class,
+        InteractorsModule::class,
+        AppModule::class,
+        DatabaseModule::class
+    ]
 )
 interface AppComponent {
     fun inject(mainFragment: MainFragment)
+    fun inject(statsFragment: StatsFragment)
+    fun inject(settingsFragment: SettingsFragment)
 }
 
 @Module
-class InteractorsModule {
+class VMFactoriesModule{
     @Singleton
     @Provides
-    fun mainViewModelFactory(interactor: StateInteractor): ButtonsFragmentViewModelFactory =
-        ButtonsFragmentViewModelFactory(interactor)
+    fun mainViewModelFactory(interactor: StateInteractor): MainFragmentViewModelFactory =
+        MainFragmentViewModelFactory(interactor)
+
+    @Singleton
+    @Provides
+    fun statsViewModelFactory(): StatsFragmentViewModelFactory =
+        StatsFragmentViewModelFactory()
+
+}
+@Module
+class InteractorsModule {
 
     @Singleton
     @Provides
