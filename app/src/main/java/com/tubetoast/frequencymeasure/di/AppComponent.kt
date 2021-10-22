@@ -6,9 +6,9 @@ import com.tubetoast.frequencymeasure.di.modules.DatabaseModule
 import com.tubetoast.frequencymeasure.di.modules.InteractorsModule
 import com.tubetoast.frequencymeasure.di.modules.VMFactoriesModule
 import com.tubetoast.frequencymeasure.presentation.App
-import com.tubetoast.frequencymeasure.presentation.view.MainFragment
-import com.tubetoast.frequencymeasure.presentation.view.SettingsFragment
-import com.tubetoast.frequencymeasure.presentation.view.StatsFragment
+import com.tubetoast.frequencymeasure.presentation.view.fragments.MainFragment
+import com.tubetoast.frequencymeasure.presentation.view.fragments.SettingsFragment
+import com.tubetoast.frequencymeasure.presentation.view.fragments.StatsFragment
 import dagger.Component
 import javax.inject.Singleton
 

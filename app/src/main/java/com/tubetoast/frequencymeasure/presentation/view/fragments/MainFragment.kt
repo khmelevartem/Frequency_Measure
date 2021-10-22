@@ -1,4 +1,4 @@
-package com.tubetoast.frequencymeasure.presentation.view
+package com.tubetoast.frequencymeasure.presentation.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,7 @@ import com.tubetoast.frequencymeasure.presentation.viewmodel.MainFragmentViewMod
 import com.tubetoast.frequencymeasure.presentation.viewmodel.factories.MainFragmentViewModelFactory
 import javax.inject.Inject
 
-class MainFragment : BindingFragment<FragmentMainBinding>() {
+class MainFragment : AbstractBindingFragment<FragmentMainBinding>() {
 
     @Inject
     lateinit var factory: MainFragmentViewModelFactory
@@ -27,7 +27,6 @@ class MainFragment : BindingFragment<FragmentMainBinding>() {
     ): View {
         requireContext().appComponent.inject(this)
         return FragmentMainBinding.inflate(layoutInflater, container, false)
-            .save()
             .apply {
                 lifecycleOwner = fragment
                 viewModel = fragment.viewModel

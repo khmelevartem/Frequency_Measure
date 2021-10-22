@@ -1,4 +1,4 @@
-package com.tubetoast.frequencymeasure.presentation.view
+package com.tubetoast.frequencymeasure.presentation.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.tubetoast.frequencymeasure.R
 import com.tubetoast.frequencymeasure.databinding.FragmentSettingsBinding
 
-class SettingsFragment : Fragment() {
+class SettingsFragment : AbstractBindingFragment<FragmentSettingsBinding>() {
 
     override fun onCreateView(
         inflater: LayoutInflater,

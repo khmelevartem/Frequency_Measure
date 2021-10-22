@@ -1,4 +1,4 @@
-package com.tubetoast.frequencymeasure.presentation.view
+package com.tubetoast.frequencymeasure.presentation.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,7 @@ import com.tubetoast.frequencymeasure.presentation.viewmodel.StatsFragmentViewMo
 import com.tubetoast.frequencymeasure.presentation.viewmodel.factories.StatsFragmentViewModelFactory
 import javax.inject.Inject
 
-class StatsFragment : BindingFragment<FragmentStatsBinding>() {
+class StatsFragment : AbstractBindingFragment<FragmentStatsBinding>() {
 
     @Inject
     lateinit var factory: StatsFragmentViewModelFactory

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.tubetoast.frequencymeasure.presentation.view.MainFragment"
+        android:name="com.tubetoast.frequencymeasure.presentation.view.fragments.MainFragment"
         android:label="ButtonsFragment"
         tools:layout="@layout/fragment_main">
         <action
@@ -21,12 +21,12 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.tubetoast.frequencymeasure.presentation.view.SettingsFragment"
+        android:name="com.tubetoast.frequencymeasure.presentation.view.fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/statsFragment"
-        android:name="com.tubetoast.frequencymeasure.presentation.view.StatsFragment"
+        android:name="com.tubetoast.frequencymeasure.presentation.view.fragments.StatsFragment"
         android:label="fragment_stats"
         tools:layout="@layout/fragment_stats" >
         <action
