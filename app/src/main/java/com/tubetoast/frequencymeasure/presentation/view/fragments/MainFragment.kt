@@ -4,12 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.AnimationUtils
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.tubetoast.frequencymeasure.R
 import com.tubetoast.frequencymeasure.databinding.FragmentMainBinding
 import com.tubetoast.frequencymeasure.di.appComponent
-import com.tubetoast.frequencymeasure.presentation.utils.fragment
-import com.tubetoast.frequencymeasure.presentation.utils.navigateOnClick
+import com.tubetoast.frequencymeasure.presentation.utils.*
 import com.tubetoast.frequencymeasure.presentation.viewmodel.MainFragmentViewModel
 import com.tubetoast.frequencymeasure.presentation.viewmodel.factories.MainFragmentViewModelFactory
 import javax.inject.Inject
@@ -31,7 +35,7 @@ class MainFragment : AbstractBindingFragment<FragmentMainBinding>() {
                 lifecycleOwner = fragment
                 viewModel = fragment.viewModel
                 navigateOnClick(btnSettings, R.id.main_to_settings)
-                navigateOnClick(btnStats, R.id.main_to_stats)
+                navigateWithExplosionOnClick(btnStats, R.id.main_to_stats, circle)
             }.root
     }
 }

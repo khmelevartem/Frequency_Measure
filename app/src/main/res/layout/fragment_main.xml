@@ -68,7 +68,18 @@
             android:backgroundTint="?attr/colorOnPrimary"
             android:src="@drawable/ic_baseline_trending_up_24"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <View
+            android:id="@+id/circle"
+            android:layout_width="@dimen/fab_size"
+            android:layout_height="@dimen/fab_size"
+            android:background="@drawable/circle"
+            android:elevation="@dimen/extra_small"
+            app:layout_constraintEnd_toEndOf="@+id/btn_stats"
+            app:layout_constraintTop_toTopOf="@+id/btn_stats" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

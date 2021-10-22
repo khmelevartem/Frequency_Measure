@@ -13,6 +13,8 @@
         <action
             android:id="@+id/main_to_settings"
             app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
             app:popUpTo="@id/mainFragment" />
         <action
             android:id="@+id/main_to_stats"
@@ -32,6 +34,8 @@
         <action
             android:id="@+id/stats_to_settings"
             app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
             app:popUpTo="@id/statsFragment" />
     </fragment>
 
