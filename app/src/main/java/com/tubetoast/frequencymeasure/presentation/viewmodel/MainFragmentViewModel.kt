@@ -25,10 +25,10 @@ class MainFragmentViewModel(
         seanceActive.value = false
     }
 
-    private fun visibleIf(liveData: LiveData<Boolean>) =
-        Transformations.map(liveData) { if (it) View.VISIBLE else View.GONE }
+    private fun visibleIf(condition: LiveData<Boolean>) =
+        Transformations.map(condition) { isTrue -> if (isTrue) View.VISIBLE else View.GONE }
 
     private fun LiveData<Boolean>.inverse() =
-        Transformations.map(this) { !it }
+        Transformations.map(this) { isTrue -> !isTrue }
 }
 
